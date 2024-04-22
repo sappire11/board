@@ -21,7 +21,22 @@
                 <input type="text" name="nickname" />
             </div>
             <textarea name="content" rows="5"></textarea>
+            <input class="board__submit-btn" type="submit" />
         </form>
+        <div class="board__hr"></div>
+        <section>
+            <div class="card">
+                <div class="card__avatar">
+                </div>
+                <div class="card__content">
+                    <div class="card__info">
+                        <span class="card__author">sapphire</span>
+                        <span class="card__time">2024-04-22 15:00:00</span>
+                    </div>
+                    <p class="card__content">留言內容</p>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 
