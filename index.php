@@ -1,3 +1,14 @@
+<?php
+require_once("conn.php");
+
+$result = $conn->query("SELECT * FROM comments ORDER BY id DESC");
+if (!$result) {
+    die('error:' . $conn->error);
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,18 +36,25 @@
         </form>
         <div class="board__hr"></div>
         <section>
-            <div class="card">
-                <div class="card__avatar">
-                </div>
-                <div class="card__content">
-                    <div class="card__info">
-                        <span class="card__author">sapphire</span>
-                        <span class="card__time">2024-04-22 15:00:00</span>
+            <?php
+            while ($row = $result->fetch_assoc()) {
+            ?>
+                <div class="card">
+                    <div class="card__avatar">
                     </div>
-                    <p class="card__content">留言內容</p>
+                    <div class="card__content">
+                        <div class="card__info">
+                            <span class="card__author"><?php echo $row['nickname']; ?></span>
+                            <span class="card__time"><?php echo $row['created_at']; ?></span>
+                        </div>
+                        <p class="card__content"><?php echo $row['content']; ?></p>
+                    </div>
                 </div>
-            </div>
+            <?php
+            }
+            ?>
         </section>
+
     </main>
 </body>
 
