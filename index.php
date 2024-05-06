@@ -26,6 +26,16 @@ if (!$result) {
     </header>
     <main class="board">
         <h1 class="board__title">Comments</h1>
+        <?php
+        if (!empty($_GET['errCode'])) {
+            $code = $_GET['errCode'];
+            $msg = 'Error';
+            if ($code === '1') {
+                $msg = '資料不齊全';
+            }
+            echo '<h2>' . $msg . '</h2>';
+        }
+        ?>
         <form class="board__new-comment-form" method="POST" action="handle_add_comment.php">
             <div class="board__nickname">
                 <span>暱稱:</span>

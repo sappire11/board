@@ -70,6 +70,7 @@ body{
     margin-top: 8px;
     max-width: 100%;
     word-break: break-all;
+    white-space: pre-line;
 }
 .card__author{
     color: #5c9edc;
